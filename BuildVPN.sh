@@ -93,6 +93,7 @@ func_build_server(){
 
   # Build Server Configuration
   echo "[*] Creating server.conf in ${openvpn_dir}"
+  echo "unique_subject = no" >> ${openvpn_dir}/easy-rsa/keys/index.txt.attr
   echo "local ${ip}" > ${ovpnsvr_cnf}
   echo 'port 1194' >> ${ovpnsvr_cnf}
   echo 'proto udp' >> ${ovpnsvr_cnf}
